@@ -1,0 +1,1064 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nguyen Atom Protehome Lab · Protein Homeostasis &amp; Therapeutic Discovery · VinUniversity</title>
+  <meta name="description" content="The Nguyen Atom Protehome Lab at VinUniversity studies and engineers protein homeostasis at molecular and atomic resolution: ubiquitin biology, targeted protein degradation, proteostasis, atomic biology and therapeutic discovery.">
+  <meta property="og:title" content="Nguyen Atom Protehome Lab · VinUniversity">
+  <meta property="og:description" content="Understanding and engineering protein homeostasis at molecular and atomic resolution to advance human health.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#F7F5F0">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314202B'/%3E%3Ccircle cx='24' cy='26' r='9' fill='none' stroke='%23F7F5F0' stroke-width='4'/%3E%3Ccircle cx='40' cy='26' r='9' fill='none' stroke='%237FC4C0' stroke-width='4'/%3E%3Ccircle cx='32' cy='40' r='9' fill='none' stroke='%23E07A5F' stroke-width='4'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&display=swap&subset=vietnamese" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #F7F5F0;
+      --paper-2: #EFEAE1;
+      --card: #FCFBF8;
+      --ink: #14202B;
+      --ink-2: #2E3C48;
+      --muted: #5C6974;
+      --line: rgba(20, 32, 43, .12);
+      --line-soft: rgba(20, 32, 43, .07);
+      --teal: #1B6B6F;
+      --teal-deep: #124A4E;
+      --teal-soft: #DDEBE9;
+      --teal-light: #7FC4C0;
+      --coral: #E07A5F;
+      --serif: 'Source Serif 4', 'Iowan Old Style', Georgia, serif;
+      --sans: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --max: 1180px;
+      --radius: 20px;
+      --shadow-sm: 0 1px 0 rgba(20, 32, 43, .04), 0 2px 6px -2px rgba(20, 32, 43, .08);
+      --shadow: 0 1px 0 rgba(20, 32, 43, .04), 0 18px 40px -24px rgba(20, 32, 43, .35);
+      --ease: cubic-bezier(.2, .7, .2, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip; }
+    body { overflow-x: clip; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    /* subtle paper grain */
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: .045;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    ::selection { background: var(--teal-soft); color: var(--teal-deep); }
+    :focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 6px; }
+
+    .wrap { width: min(var(--max), calc(100% - 48px)); margin-inline: auto; position: relative; z-index: 2; }
+
+    /* ---------- Header ---------- */
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(247, 245, 240, .78);
+      backdrop-filter: saturate(140%) blur(14px);
+      -webkit-backdrop-filter: saturate(140%) blur(14px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .3s var(--ease), background .3s var(--ease);
+    }
+    .site-header.scrolled { border-bottom-color: var(--line-soft); }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .brand-mark { width: 36px; height: 36px; flex: none; }
+    .brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+    .brand-name { font-family: var(--serif); font-weight: 600; font-size: 1.02rem; letter-spacing: -.005em; }
+    .brand-sub { font-size: .72rem; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0; }
+    .nav-links a {
+      display: block; padding: 8px 14px; border-radius: 999px;
+      font-size: .92rem; font-weight: 500; color: var(--ink-2); text-decoration: none;
+      transition: background .2s var(--ease), color .2s var(--ease);
+    }
+    .nav-links a:hover { background: rgba(20, 32, 43, .05); color: var(--ink); }
+    .nav-links a.active { color: var(--teal-deep); background: var(--teal-soft); }
+    .nav-toggle {
+      display: none; width: 44px; height: 44px; border: 0; background: transparent; border-radius: 12px; cursor: pointer;
+      align-items: center; justify-content: center; color: var(--ink);
+    }
+    .nav-toggle:hover { background: rgba(20, 32, 43, .06); }
+
+    /* ---------- Shared ---------- */
+    section { position: relative; z-index: 2; }
+    .section { padding: clamp(84px, 11vw, 140px) 0; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-size: .76rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--teal);
+      margin: 0 0 20px;
+    }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; opacity: .6; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); margin: 0; }
+    h2.section-title { font-size: clamp(2.1rem, 4.2vw, 3.2rem); line-height: 1.08; letter-spacing: -.02em; max-width: 18ch; }
+    .section-head { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; margin-bottom: clamp(44px, 6vw, 72px); }
+    .section-head p { color: var(--muted); margin: 0; max-width: 46ch; justify-self: end; font-size: 1.04rem; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 22px; border-radius: 999px; font-weight: 500; font-size: .95rem; text-decoration: none;
+      transition: transform .25s var(--ease), background .25s var(--ease), box-shadow .25s var(--ease), color .25s var(--ease);
+      cursor: pointer; border: 0; font-family: inherit;
+    }
+    .btn svg { width: 16px; height: 16px; transition: transform .25s var(--ease); }
+    .btn:hover svg { transform: translateX(3px); }
+    .btn-primary { background: var(--ink); color: var(--paper); box-shadow: 0 10px 24px -14px rgba(20, 32, 43, .7); }
+    .btn-primary:hover { background: var(--teal-deep); transform: translateY(-1px); }
+    .btn-ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px var(--line); }
+    .btn-ghost:hover { background: var(--card); box-shadow: inset 0 0 0 1px rgba(20, 32, 43, .22); }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* ---------- Hero ---------- */
+    .hero { padding: clamp(40px, 6vw, 72px) 0 clamp(64px, 8vw, 110px); overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
+    .hero h1 {
+      font-size: clamp(2.9rem, 6.4vw, 5.4rem); line-height: .98; letter-spacing: -.03em; font-weight: 500;
+    }
+    .hero h1 em { font-style: italic; color: var(--teal); font-weight: 400; }
+    .hero-tagline {
+      margin: 26px 0 0; font-size: .82rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-2); font-weight: 500;
+    }
+    .hero-vision {
+      font-family: var(--serif); font-size: clamp(1.25rem, 2vw, 1.5rem); line-height: 1.45; color: var(--ink-2);
+      margin: 26px 0 38px; max-width: 30ch; font-weight: 400;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-meta {
+      display: flex; flex-wrap: wrap; gap: 28px; margin-top: 52px; padding-top: 26px; border-top: 1px solid var(--line);
+      max-width: 520px;
+    }
+    .hero-meta div { display: flex; flex-direction: column; }
+    .hero-meta strong { font-family: var(--serif); font-size: 1.7rem; font-weight: 500; letter-spacing: -.02em; line-height: 1.1; }
+    .hero-meta span { font-size: .8rem; color: var(--muted); }
+    .hero-art { position: relative; aspect-ratio: 4 / 5; }
+    .hero-art img {
+      width: 100%; height: 100%; object-fit: cover; border-radius: 28px;
+      animation: float 9s ease-in-out infinite;
+    }
+    .hero-art figcaption {
+      position: absolute; left: -18px; bottom: 32px;
+      background: rgba(252, 251, 248, .92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      padding: 14px 18px; border-radius: 14px; box-shadow: var(--shadow); max-width: 260px;
+      font-size: .82rem; color: var(--ink-2); line-height: 1.45;
+    }
+    .hero-art figcaption b { display: block; font-family: var(--serif); font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+    /* ---------- About band ---------- */
+    .about { padding: 0 0 clamp(20px, 3vw, 40px); }
+    .about-card {
+      display: grid; grid-template-columns: auto 1fr auto; gap: 32px; align-items: center;
+      background: var(--card); border-radius: var(--radius); padding: 30px 34px; box-shadow: var(--shadow-sm);
+      border: 1px solid var(--line-soft);
+    }
+    .about-card .label { font-size: .76rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+    .about-card p { margin: 0; color: var(--ink-2); max-width: 64ch; }
+    .about-card p strong { color: var(--ink); font-weight: 600; }
+
+    /* ---------- Research ---------- */
+    .vision {
+      display: grid; grid-template-columns: 200px 1fr; gap: 40px; padding: 40px 0 56px; border-top: 1px solid var(--line);
+    }
+    .vision .k { font-size: .76rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); padding-top: 10px; }
+    .vision blockquote {
+      margin: 0; font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.35rem); line-height: 1.25; letter-spacing: -.015em; color: var(--ink);
+      max-width: 26ch;
+    }
+    .pillars { list-style: none; margin: 0; padding: 0; counter-reset: p; }
+    .pillar {
+      display: grid; grid-template-columns: 200px 1fr 1.05fr 40px; gap: 40px; align-items: start;
+      padding: 34px 0; border-top: 1px solid var(--line); position: relative;
+      transition: padding .35s var(--ease);
+    }
+    .pillar:last-child { border-bottom: 1px solid var(--line); }
+    .pillar::before {
+      content: ""; position: absolute; inset: 0 -24px; border-radius: 18px; background: var(--card);
+      opacity: 0; transform: scale(.985); transition: opacity .35s var(--ease), transform .35s var(--ease); z-index: -1;
+      box-shadow: var(--shadow-sm);
+    }
+    .pillar:hover::before { opacity: 1; transform: none; }
+    .pillar-num { font-family: var(--serif); font-style: italic; font-size: 2.4rem; line-height: 1; color: var(--teal); font-weight: 400; }
+    .pillar h3 { font-size: clamp(1.3rem, 2vw, 1.6rem); line-height: 1.22; letter-spacing: -.01em; }
+    .pillar p { margin: 4px 0 0; color: var(--muted); }
+    .pillar-arrow {
+      width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; color: var(--teal);
+      box-shadow: inset 0 0 0 1px var(--line); opacity: 0; transform: translateX(-6px);
+      transition: opacity .35s var(--ease), transform .35s var(--ease);
+    }
+    .pillar:hover .pillar-arrow { opacity: 1; transform: none; }
+    .pillar-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+    .pillar-tags span {
+      font-size: .76rem; padding: 4px 10px; border-radius: 999px; background: var(--paper-2); color: var(--ink-2);
+    }
+
+    /* ---------- Publications ---------- */
+    .pubs { background: var(--paper-2); }
+    .pubs-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
+    .pubs-grid p.lead { color: var(--ink-2); font-size: 1.08rem; max-width: 46ch; margin: 22px 0 32px; }
+    .link-cards { display: grid; gap: 14px; }
+    .link-card {
+      display: grid; grid-template-columns: 52px 1fr 28px; gap: 18px; align-items: center;
+      padding: 22px 24px; background: var(--card); border-radius: 18px; text-decoration: none; box-shadow: var(--shadow-sm);
+      border: 1px solid var(--line-soft);
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+    }
+    .link-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .link-card .ico {
+      width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center;
+      background: var(--teal-soft); color: var(--teal-deep);
+    }
+    .link-card .ico svg { width: 24px; height: 24px; }
+    .link-card b { display: block; font-family: var(--serif); font-size: 1.15rem; font-weight: 600; }
+    .link-card span { font-size: .86rem; color: var(--muted); }
+    .link-card .go { color: var(--muted); transition: transform .3s var(--ease), color .3s var(--ease); }
+    .link-card:hover .go { transform: translate(3px, -3px); color: var(--teal); }
+
+    /* ---------- People ---------- */
+    .people-group-title {
+      display: flex; align-items: baseline; justify-content: space-between; gap: 20px;
+      font-size: .76rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted);
+      padding-bottom: 14px; border-bottom: 1px solid var(--line); margin: 0 0 24px;
+    }
+    .people-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .person {
+      background: var(--card); border-radius: var(--radius); padding: 26px; border: 1px solid var(--line-soft);
+      box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 18px; position: relative;
+      transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+    }
+    .person:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .person-top { display: flex; align-items: center; justify-content: space-between; }
+    .avatar {
+      width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center;
+      font-family: var(--serif); font-size: 1.35rem; font-weight: 500; letter-spacing: .02em;
+      background: var(--teal-soft); color: var(--teal-deep); position: relative;
+    }
+    .avatar.alt { background: #F6E3DC; color: #9A4A35; }
+    .avatar.neutral { background: var(--paper-2); color: var(--ink-2); }
+    .person h3 { font-size: 1.22rem; line-height: 1.25; letter-spacing: -.005em; }
+    .person .role { font-size: .9rem; color: var(--muted); margin-top: 2px; }
+    .mail {
+      width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; color: var(--ink-2);
+      box-shadow: inset 0 0 0 1px var(--line); text-decoration: none; position: relative;
+      transition: background .25s var(--ease), color .25s var(--ease), box-shadow .25s var(--ease);
+    }
+    .mail:hover { background: var(--ink); color: var(--paper); box-shadow: none; }
+    .mail svg { width: 18px; height: 18px; }
+    .mail .tip {
+      position: absolute; right: 0; bottom: calc(100% + 10px); white-space: nowrap;
+      background: var(--ink); color: var(--paper); font-size: .76rem; padding: 6px 10px; border-radius: 8px;
+      opacity: 0; transform: translateY(4px); pointer-events: none; transition: opacity .2s var(--ease), transform .2s var(--ease);
+    }
+    .mail:hover .tip, .mail:focus-visible .tip { opacity: 1; transform: none; }
+
+    .person.pi { grid-column: span 3; flex-direction: row; align-items: center; gap: 32px; padding: 32px 36px; }
+    .person.pi .avatar { width: 112px; height: 112px; font-size: 2.2rem; flex: none; background: var(--ink); color: var(--paper); }
+    .person.pi .avatar::after {
+      content: ""; position: absolute; inset: -6px; border-radius: 50%; box-shadow: inset 0 0 0 1px var(--line);
+    }
+    .person.pi .pi-body { flex: 1; }
+    .person.pi .kicker { font-size: .74rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--teal); }
+    .person.pi h3 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); margin-top: 6px; letter-spacing: -.015em; }
+    .person.pi .pi-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 8px; padding: 9px 15px; border-radius: 999px;
+      font-size: .86rem; text-decoration: none; color: var(--ink-2); box-shadow: inset 0 0 0 1px var(--line);
+      transition: background .25s var(--ease), color .25s var(--ease);
+    }
+    .chip svg { width: 15px; height: 15px; }
+    .chip:hover { background: var(--ink); color: var(--paper); box-shadow: none; }
+
+    .alumni { margin-top: 56px; }
+    .alumni-row {
+      display: grid; grid-template-columns: 64px 1fr auto; gap: 20px; align-items: center;
+      padding: 18px 0; border-bottom: 1px solid var(--line-soft);
+    }
+    .alumni-row .avatar { width: 48px; height: 48px; font-size: 1rem; }
+    .alumni-row b { font-family: var(--serif); font-size: 1.12rem; font-weight: 500; }
+    .alumni-row span { color: var(--muted); font-size: .92rem; }
+    .alumni-row .year { font-family: var(--serif); font-style: italic; color: var(--teal); font-size: 1.1rem; }
+
+    /* ---------- Writing ---------- */
+    .writing { background: var(--paper-2); }
+    .feature {
+      display: grid; grid-template-columns: 1.15fr 1fr; background: var(--card); border-radius: 26px; overflow: hidden;
+      box-shadow: var(--shadow); text-decoration: none; border: 1px solid var(--line-soft);
+      transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+    }
+    .feature:hover { transform: translateY(-4px); box-shadow: 0 30px 60px -30px rgba(20, 32, 43, .45); }
+    .feature-img { position: relative; overflow: hidden; min-height: 340px; }
+    .feature-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+    .feature:hover .feature-img img { transform: scale(1.04); }
+    .feature-body { padding: clamp(28px, 4vw, 48px); display: flex; flex-direction: column; }
+    .meta-row { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: .8rem; color: var(--muted); align-items: center; }
+    .meta-row .lang { padding: 4px 10px; border-radius: 999px; background: var(--teal-soft); color: var(--teal-deep); font-weight: 500; }
+    .feature h3 { font-size: clamp(1.45rem, 2.4vw, 1.95rem); line-height: 1.22; letter-spacing: -.015em; margin: 18px 0 16px; }
+    .feature p { color: var(--muted); margin: 0 0 28px; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+    .read-link { margin-top: auto; display: inline-flex; align-items: center; gap: 10px; font-weight: 500; color: var(--ink); }
+    .read-link svg { width: 18px; height: 18px; transition: transform .3s var(--ease); }
+    .feature:hover .read-link svg { transform: translateX(4px); }
+    .read-link .bar { height: 1px; width: 36px; background: var(--ink); transition: width .4s var(--ease); }
+    .feature:hover .read-link .bar { width: 56px; }
+
+    /* ---------- News ---------- */
+    .news-item {
+      display: grid; grid-template-columns: 200px 1fr; gap: 40px; padding: 40px 0; border-top: 1px solid var(--line);
+    }
+    .news-item:last-child { border-bottom: 1px solid var(--line); }
+    .news-date { display: flex; flex-direction: column; gap: 6px; }
+    .news-date .m { font-family: var(--serif); font-size: 1.7rem; letter-spacing: -.02em; line-height: 1; }
+    .news-date .t { font-size: .76rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--coral); }
+    .news-item .kicker { font-size: .84rem; color: var(--muted); }
+    .news-item h3 { font-size: clamp(1.4rem, 2.4vw, 1.9rem); line-height: 1.2; letter-spacing: -.015em; margin: 8px 0 14px; max-width: 30ch; }
+    .news-item p { color: var(--ink-2); margin: 0; max-width: 70ch; }
+
+    /* ---------- Contact ---------- */
+    .contact { background: var(--ink); color: var(--paper); overflow: hidden; }
+    .contact .eyebrow { color: var(--teal-light); }
+    .contact h2 { color: var(--paper); font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.04; letter-spacing: -.025em; max-width: 14ch; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: end; }
+    .contact-list { display: grid; gap: 0; }
+    .contact-row {
+      display: grid; grid-template-columns: 110px 1fr 24px; gap: 20px; align-items: center; padding: 22px 0;
+      border-top: 1px solid rgba(247, 245, 240, .14); text-decoration: none; color: var(--paper);
+      transition: padding .3s var(--ease);
+    }
+    .contact-row:last-child { border-bottom: 1px solid rgba(247, 245, 240, .14); }
+    .contact-row .k { font-size: .74rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(247, 245, 240, .55); }
+    .contact-row .v { font-family: var(--serif); font-size: clamp(1.15rem, 2vw, 1.4rem); }
+    .contact-row svg { width: 20px; height: 20px; color: rgba(247, 245, 240, .5); transition: transform .3s var(--ease), color .3s var(--ease); }
+    a.contact-row:hover { padding-left: 8px; }
+    a.contact-row:hover svg { transform: translate(3px, -3px); color: var(--teal-light); }
+    .contact-glow {
+      position: absolute; width: 640px; height: 640px; right: -200px; top: -260px; border-radius: 50%;
+      background: radial-gradient(closest-side, rgba(27, 107, 111, .55), transparent); filter: blur(10px); pointer-events: none;
+    }
+    .site-footer {
+      background: var(--ink); color: rgba(247, 245, 240, .55); font-size: .84rem; position: relative; z-index: 2;
+      border-top: 1px solid rgba(247, 245, 240, .1);
+    }
+    .site-footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding: 28px 0; }
+    .site-footer a { color: rgba(247, 245, 240, .75); text-decoration: none; }
+    .site-footer a:hover { color: var(--paper); }
+
+    /* ---------- Draft badge ---------- */
+    .draft {
+      position: fixed; left: 20px; bottom: 20px; z-index: 60; display: flex; align-items: center; gap: 12px;
+      background: rgba(252, 251, 248, .95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      padding: 10px 10px 10px 16px; border-radius: 14px; box-shadow: var(--shadow); font-size: .8rem; color: var(--ink-2);
+      border: 1px solid var(--line-soft);
+    }
+    .draft b { color: var(--ink); font-weight: 600; }
+    .draft button {
+      border: 0; background: transparent; width: 28px; height: 28px; border-radius: 8px; cursor: pointer; color: var(--muted);
+      display: grid; place-items: center;
+    }
+    .draft button:hover { background: rgba(20, 32, 43, .06); color: var(--ink); }
+
+    /* ---------- Reader ---------- */
+    .reader {
+      position: fixed; inset: 0; z-index: 100; background: var(--paper); overflow-y: auto; overscroll-behavior: contain;
+      opacity: 0; visibility: hidden; transition: opacity .35s var(--ease), visibility .35s;
+    }
+    .reader.open { opacity: 1; visibility: visible; }
+    .reader-bar {
+      position: sticky; top: 0; z-index: 2; background: rgba(247, 245, 240, .85);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line-soft);
+    }
+    .reader-bar .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+    .reader-bar .back {
+      display: inline-flex; align-items: center; gap: 8px; font-weight: 500; font-size: .92rem; text-decoration: none;
+      padding: 8px 14px 8px 10px; border-radius: 999px; color: var(--ink);
+    }
+    .reader-bar .back:hover { background: rgba(20, 32, 43, .06); }
+    .reader-bar .back svg { width: 18px; height: 18px; }
+    .reader-bar .crumb { font-size: .82rem; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .progress { position: absolute; left: 0; bottom: -1px; height: 2px; background: var(--teal); width: 0; transition: width .1s linear; }
+    .article { width: min(720px, calc(100% - 48px)); margin: 0 auto; padding: clamp(40px, 7vw, 80px) 0 120px; position: relative; z-index: 2; }
+    .article-head h1 {
+      font-size: clamp(2rem, 4.6vw, 3.1rem); line-height: 1.12; letter-spacing: -.02em; margin: 18px 0 0;
+    }
+    .article-head .byline { margin-top: 22px; font-size: .9rem; color: var(--muted); }
+    .article-hero { margin: 40px calc(50% - min(560px, 50vw - 24px)) 48px; border-radius: 22px; overflow: hidden; box-shadow: var(--shadow); }
+    .article-hero img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+    .prose { font-family: var(--serif); font-size: 1.2rem; line-height: 1.78; color: var(--ink-2); }
+    .prose p { margin: 0 0 1.25em; }
+    .prose > p:first-of-type::first-letter {
+      float: left; font-size: 4.2em; line-height: .82; padding: .08em .1em 0 0; color: var(--teal); font-weight: 500;
+    }
+    .prose h2 {
+      font-size: 1.62rem; line-height: 1.25; letter-spacing: -.01em; color: var(--ink); margin: 2.2em 0 .7em; font-weight: 600;
+    }
+    .prose ul { margin: 0 0 1.4em; padding-left: 1.2em; }
+    .prose li { margin: .35em 0; padding-left: .3em; }
+    .prose li::marker { color: var(--teal); }
+    .prose strong { color: var(--ink); font-weight: 600; }
+    .prose em { font-style: italic; }
+    .prose .pull {
+      margin: 1.8em 0; padding: 0; font-size: 1.55rem; line-height: 1.35; color: var(--ink); font-style: italic; position: relative;
+    }
+    .prose .pull::before { content: "\201C"; display: block; font-size: 3.6rem; line-height: .6; color: var(--coral); font-style: normal; margin-bottom: 8px; }
+    .prose .pull small { display: block; margin-top: 12px; font-size: .95rem; font-style: normal; color: var(--muted); font-family: var(--sans); }
+    .prose .callout {
+      margin: 2.4em 0 0; padding: 28px 30px; border-radius: 18px; background: var(--card); box-shadow: var(--shadow-sm);
+      border: 1px solid var(--line-soft); font-size: 1.08rem;
+    }
+    .prose .callout .k { font-family: var(--sans); font-size: .74rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--coral); margin-bottom: 10px; display: block; }
+    .prose .callout p:last-child { margin-bottom: 0; }
+    .article-end { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .article-end span { color: var(--muted); font-size: .9rem; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1020px) {
+      .pillar { grid-template-columns: 70px 1fr; gap: 10px 24px; }
+      .pillar p, .pillar-tags { grid-column: 2; }
+      .pillar-arrow { display: none; }
+      .vision, .news-item { grid-template-columns: 1fr; gap: 16px; }
+      .people-grid { grid-template-columns: repeat(2, 1fr); }
+      .person.pi { grid-column: span 2; }
+    }
+    @media (max-width: 860px) {
+      .nav-links {
+        position: fixed; top: 72px; left: 0; right: 0; flex-direction: column; gap: 2px; padding: 12px 24px 24px;
+        background: var(--paper); border-bottom: 1px solid var(--line); box-shadow: 0 20px 30px -24px rgba(20,32,43,.3);
+        transform: translateY(-8px); opacity: 0; visibility: hidden; transition: all .25s var(--ease);
+      }
+      .nav-links.open { transform: none; opacity: 1; visibility: visible; }
+      .nav-links a { padding: 14px 12px; font-size: 1.05rem; border-radius: 12px; }
+      .nav-toggle { display: inline-flex; }
+      .hero-grid, .pubs-grid, .contact-grid, .section-head { grid-template-columns: 1fr; }
+      .section-head p { justify-self: start; }
+      .hero-art { max-width: 460px; margin-inline: auto; width: 100%; }
+      .hero-art figcaption { left: 12px; }
+      .about-card { grid-template-columns: 1fr; gap: 14px; }
+      .feature { grid-template-columns: 1fr; }
+      .feature-img { min-height: 220px; aspect-ratio: 16 / 9; }
+    }
+    @media (max-width: 620px) {
+      body { font-size: 16px; }
+      .wrap { width: calc(100% - 36px); }
+      .people-grid { grid-template-columns: 1fr; }
+      .person.pi { grid-column: span 1; flex-direction: column; align-items: flex-start; gap: 20px; padding: 26px; }
+      .person.pi .avatar { width: 84px; height: 84px; font-size: 1.7rem; }
+      .contact-row { grid-template-columns: 1fr 24px; }
+      .contact-row .k { grid-column: 1 / -1; }
+      .alumni-row { grid-template-columns: 48px 1fr; }
+      .alumni-row .year { grid-column: 2; }
+      .brand-sub { display: none; }
+      .prose { font-size: 1.1rem; }
+      .draft { left: 12px; right: 12px; bottom: 12px; justify-content: space-between; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== Header ===================== -->
+  <header class="site-header" id="top">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Nguyen Atom Protehome Lab, home">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="15" cy="16" r="7.5" fill="none" stroke="#14202B" stroke-width="2.6"/>
+          <circle cx="25" cy="16" r="7.5" fill="none" stroke="#1B6B6F" stroke-width="2.6"/>
+          <circle cx="20" cy="25" r="7.5" fill="none" stroke="#E07A5F" stroke-width="2.6"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">Nguyen Atom Protehome Lab</span>
+          <span class="brand-sub">VinUniversity</span>
+        </span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#research" id="nav-research">Research</a></li>
+        <li><a href="#publications" id="nav-publications">Publications</a></li>
+        <li><a href="#people" id="nav-people">People</a></li>
+        <li><a href="#writing" id="nav-writing">Writing</a></li>
+        <li><a href="#news" id="nav-news">News</a></li>
+        <li><a href="#contact" id="nav-contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== Hero ===================== -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="reveal">
+          <p class="eyebrow">College of Health Sciences · VinUniversity</p>
+          <h1>Nguyen Atom<br><em>Protehome</em> Lab</h1>
+          <p class="hero-tagline">Protein Homeostasis &amp; Therapeutic Discovery</p>
+          <p class="hero-vision">Understanding and engineering protein homeostasis at molecular and atomic resolution to advance human health.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#research" id="cta-research">Explore our research
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="#people" id="cta-people">Meet the team</a>
+          </div>
+          <div class="hero-meta" aria-label="Lab at a glance">
+            <div><strong>5</strong><span>Research pillars</span></div>
+            <div><strong>7</strong><span>Current members</span></div>
+            <div><strong>Hà Nội</strong><span>Vietnam</span></div>
+          </div>
+        </div>
+        <figure class="hero-art reveal" style="margin:0">
+          <img src="assets/hero.webp" alt="Illustration of a small protein's folded ribbon structure, rendered in translucent teal glass" width="896" height="1200" fetchpriority="high">
+          <figcaption><b>Protein fate, at atomic resolution</b>How cells modify, maintain and degrade their proteins, and how we can steer it.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===================== About ===================== -->
+    <section class="about" aria-label="About the lab">
+      <div class="wrap">
+        <div class="about-card reveal">
+          <span class="label">About</span>
+          <p>Led by <strong>Nguyen Van Thang</strong>, the lab is based at the College of Health Sciences, VinUniversity. We study how cells decide the fate of their proteins, from ubiquitin signalling to targeted degradation, and turn that understanding into new therapeutic strategies.</p>
+          <a class="chip" href="https://vinuni.edu.vn/people/nguyen-van-thang/" target="_blank" rel="noopener" id="about-profile">VinUni profile
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Research ===================== -->
+    <section class="section" id="research">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Research</p>
+            <h2 class="section-title">Five pillars, one question: how is a protein's fate decided?</h2>
+          </div>
+          <p>From the chemistry of single modifications to new medicines, our work connects atomic mechanism with cellular homeostasis and human disease.</p>
+        </div>
+
+        <div class="vision reveal">
+          <span class="k">Vision</span>
+          <blockquote>Understanding and engineering protein homeostasis at molecular and atomic resolution to advance human health.</blockquote>
+        </div>
+
+        <ol class="pillars">
+          <li class="pillar reveal">
+            <span class="pillar-num">01</span>
+            <h3>Post-Translational Modifications, with a focus on Ubiquitin Biology</h3>
+            <div>
+              <p>E3 ligases, deubiquitylating enzymes (DUBs), and the molecular regulation of protein fate.</p>
+              <div class="pillar-tags"><span>E3 ligases</span><span>DUBs</span><span>Ubiquitin code</span></div>
+            </div>
+            <span class="pillar-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </li>
+          <li class="pillar reveal">
+            <span class="pillar-num">02</span>
+            <h3>Targeted Protein Degradation</h3>
+            <div>
+              <p>Molecular glues, PROTACs, and therapeutic strategies for selective protein degradation.</p>
+              <div class="pillar-tags"><span>Molecular glues</span><span>PROTACs</span></div>
+            </div>
+            <span class="pillar-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </li>
+          <li class="pillar reveal">
+            <span class="pillar-num">03</span>
+            <h3>Proteostasis</h3>
+            <div>
+              <p>Protein quality control, protein turnover, and cellular homeostasis.</p>
+              <div class="pillar-tags"><span>Quality control</span><span>Turnover</span></div>
+            </div>
+            <span class="pillar-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </li>
+          <li class="pillar reveal">
+            <span class="pillar-num">04</span>
+            <h3>Atomic Biology</h3>
+            <div>
+              <p>Molecular mechanisms, structural biology, and protein engineering at atomic resolution.</p>
+              <div class="pillar-tags"><span>Structural biology</span><span>Protein engineering</span></div>
+            </div>
+            <span class="pillar-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </li>
+          <li class="pillar reveal">
+            <span class="pillar-num">05</span>
+            <h3>Therapeutic Discovery</h3>
+            <div>
+              <p>Next-generation therapeutic interventions for cancer, viral pathogens, neurodegeneration, and aging-associated diseases.</p>
+              <div class="pillar-tags"><span>Cancer</span><span>Viral pathogens</span><span>Neurodegeneration</span><span>Aging</span></div>
+            </div>
+            <span class="pillar-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== Publications ===================== -->
+    <section class="section pubs" id="publications">
+      <div class="wrap pubs-grid">
+        <div class="reveal">
+          <p class="eyebrow">Publications</p>
+          <h2 class="section-title">Our published work</h2>
+          <p class="lead">The complete, always up-to-date list of the lab's papers and citations lives on Google Scholar.</p>
+          <a class="btn btn-primary" href="https://scholar.google.com/citations?user=8qWl300AAAAJ" target="_blank" rel="noopener" id="cta-scholar">View on Google Scholar
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+        </div>
+        <div class="link-cards reveal">
+          <a class="link-card" href="https://scholar.google.com/citations?user=8qWl300AAAAJ" target="_blank" rel="noopener" id="card-scholar">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5 12 4l10 5.5-10 5.5L2 9.5Z"/><path d="M6 12v4.5c0 1.4 2.7 3 6 3s6-1.6 6-3V12"/></svg></span>
+            <span><b>Google Scholar</b><span>Full publication list &amp; citations</span></span>
+            <svg class="go" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+          <a class="link-card" href="https://vinuni.edu.vn/people/nguyen-van-thang/" target="_blank" rel="noopener" id="card-profile">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></span>
+            <span><b>Principal Investigator</b><span>Nguyen Van Thang · VinUniversity profile</span></span>
+            <svg class="go" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== People ===================== -->
+    <section class="section" id="people">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">People</p>
+            <h2 class="section-title">The team</h2>
+          </div>
+          <p>Postdoctoral and undergraduate researchers working together across chemistry, structural biology and medicine.</p>
+        </div>
+
+        <h3 class="people-group-title reveal"><span>Current</span><span>7 members</span></h3>
+        <div class="people-grid">
+          <article class="person pi reveal">
+            <div class="avatar" aria-hidden="true">NT</div>
+            <div class="pi-body">
+              <span class="kicker">Principal Investigator</span>
+              <h3>Nguyen Van Thang</h3>
+              <div class="pi-links">
+                <a class="chip" href="mailto:thang.nv3@vinuni.edu.vn" id="mail-thang">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>
+                  thang.nv3@vinuni.edu.vn
+                </a>
+                <a class="chip" href="https://vinuni.edu.vn/people/nguyen-van-thang/" target="_blank" rel="noopener" id="profile-thang">
+                  VinUni profile
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                </a>
+                <a class="chip" href="https://scholar.google.com/citations?user=8qWl300AAAAJ" target="_blank" rel="noopener" id="scholar-thang">
+                  Google Scholar
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="person reveal">
+            <div class="person-top">
+              <div class="avatar alt" aria-hidden="true">DT</div>
+              <a class="mail" href="mailto:thu.dth@vinuni.edu.vn" aria-label="Email Do Thi Hoai Thu" id="mail-thu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>
+                <span class="tip">thu.dth@vinuni.edu.vn</span>
+              </a>
+            </div>
+            <div><h3>Do Thi Hoai Thu</h3><div class="role">Postdoctoral Researcher</div></div>
+          </article>
+
+          <article class="person reveal">
+            <div class="person-top">
+              <div class="avatar" aria-hidden="true">NN</div>
+              <a class="mail" href="mailto:24nhu.nq@vinuni.edu.vn" aria-label="Email Nguyen Quynh Nhu" id="mail-nhu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>
+                <span class="tip">24nhu.nq@vinuni.edu.vn</span>
+              </a>
+            </div>
+            <div><h3>Nguyen Quynh Nhu</h3><div class="role">Undergraduate Researcher</div></div>
+          </article>
+
+          <article class="person reveal">
+            <div class="person-top">
+              <div class="avatar" aria-hidden="true">DK</div>
+              <a class="mail" href="mailto:25khanh.dv@vinuni.edu.vn" aria-label="Email Doan Vinh Khanh" id="mail-khanh">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>
+                <span class="tip">25khanh.dv@vinuni.edu.vn</span>
+              </a>
+            </div>
+            <div><h3>Doan Vinh Khanh</h3><div class="role">Undergraduate Researcher</div></div>
+          </article>
+
+          <article class="person reveal">
+            <div class="person-top">
+              <div class="avatar" aria-hidden="true">PA</div>
+              <a class="mail" href="mailto:25an.pdt@vinuni.edu.vn" aria-label="Email Pham Do Thai An" id="mail-an">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>
+                <span class="tip">25an.pdt@vinuni.edu.vn</span>
+              </a>
+            </div>
+            <div><h3>Pham Do Thai An</h3><div class="role">Undergraduate Researcher</div></div>
+          </article>
+
+          <article class="person reveal">
+            <div class="person-top">
+              <div class="avatar" aria-hidden="true">NN</div>
+              <a class="mail" href="mailto:24nguyen.nk@vinuni.edu.vn" aria-label="Email Nguyen Khoi Nguyen" id="mail-nguyen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>
+                <span class="tip">24nguyen.nk@vinuni.edu.vn</span>
+              </a>
+            </div>
+            <div><h3>Nguyen Khoi Nguyen</h3><div class="role">Undergraduate Researcher</div></div>
+          </article>
+
+          <article class="person reveal">
+            <div class="person-top">
+              <div class="avatar neutral" aria-hidden="true">MV</div>
+            </div>
+            <div><h3>Mai Nguyen Anh Vu</h3><div class="role">Collaborator</div></div>
+          </article>
+        </div>
+
+        <div class="alumni">
+          <h3 class="people-group-title reveal"><span>Alumni</span><span>1</span></h3>
+          <div class="alumni-row reveal">
+            <div class="avatar neutral" aria-hidden="true">VT</div>
+            <div><b>Vu Minh Tri</b><br><span>Undergraduate Student, University of Minnesota</span></div>
+            <span class="year">2026</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Writing ===================== -->
+    <section class="section writing" id="writing">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Writing</p>
+            <h2 class="section-title">Essays on science &amp; discovery</h2>
+          </div>
+          <p>Longer pieces from the lab on why fundamental science matters, written for students, clinicians and the public.</p>
+        </div>
+
+        <a class="feature reveal" href="#writing/glp-1" id="open-essay-glp1">
+          <div class="feature-img">
+            <img src="assets/writing.webp" alt="Illustration of a Gila monster lizard on desert sand with a translucent peptide helix" loading="lazy" width="1376" height="768">
+          </div>
+          <div class="feature-body">
+            <div class="meta-row">
+              <span class="lang">Tiếng Việt</span>
+              <span>June 2026</span>
+              <span data-readtime>·</span>
+            </div>
+            <h3>Từ Nọc Độc Thằn Lằn Sa Mạc Đến Cuộc Cách Mạng GLP-1 Trong Điều Trị Đái Tháo Đường Và Béo Phì: Vì Sao Khoa Học Cơ Bản Quan Trọng?</h3>
+            <p>Từ một peptide được tìm thấy trong nọc độc của loài thằn lằn Gila sống giữa sa mạc, nhân loại đã phát triển nên Ozempic, Wegovy và Mounjaro. Câu chuyện GLP-1 là minh chứng điển hình cho giá trị lâu dài của khoa học cơ bản.</p>
+            <span class="read-link"><span class="bar"></span>Đọc bài viết
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===================== News ===================== -->
+    <section class="section" id="news">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">News</p>
+            <h2 class="section-title">Latest from the lab</h2>
+          </div>
+          <p>Talks, seminars and milestones.</p>
+        </div>
+
+        <article class="news-item reveal">
+          <div class="news-date"><span class="m">Nov 2026</span><span class="t">Seminar</span></div>
+          <div>
+            <span class="kicker">Work-in-Progress Seminar</span>
+            <h3>Atomic Biology: Engineering Life at the Resolution of Atoms</h3>
+            <p>This talk introduces Atomic Biology as an emerging interdisciplinary field integrating structural biology, chemistry, AI, quantum physics, advanced imaging, and synthetic biology to understand, predict, design, and engineer biological functions at the atomic level. It explores its potential to transform future medicine while highlighting the key challenge of translating atomic-level molecular designs into predictable, experimentally validated functions in living systems.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== Contact ===================== -->
+    <section class="section contact" id="contact">
+      <div class="contact-glow" aria-hidden="true"></div>
+      <div class="wrap contact-grid">
+        <div class="reveal">
+          <p class="eyebrow">Contact</p>
+          <h2>Get in touch with the lab.</h2>
+        </div>
+        <div class="contact-list reveal">
+          <a class="contact-row" href="mailto:thang.nv3@vinuni.edu.vn" id="contact-email">
+            <span class="k">Email</span><span class="v">thang.nv3@vinuni.edu.vn</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+          <a class="contact-row" href="tel:+84333435917" id="contact-phone">
+            <span class="k">Phone</span><span class="v">+84 333 435 917</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+          <a class="contact-row" href="https://maps.google.com/?q=VinUniversity+Gia+Lam+Hanoi" target="_blank" rel="noopener" id="contact-map">
+            <span class="k">Address</span><span class="v">College of Health Sciences, VinUniversity</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© 2026 Nguyen Atom Protehome Lab · College of Health Sciences, VinUniversity</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <div class="draft" id="draftBadge" role="note">
+    <span><b>Draft v1</b> · preview for review</span>
+    <button type="button" aria-label="Hide draft note" id="draftClose">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+
+  <!-- ===================== Essay reader ===================== -->
+  <div class="reader" id="reader" role="dialog" aria-modal="true" aria-labelledby="essay-title" aria-hidden="true">
+    <div class="reader-bar">
+      <div class="wrap">
+        <a class="back" href="#writing" id="reader-back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+          Back to lab site
+        </a>
+        <span class="crumb">Writing · June 2026</span>
+      </div>
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <article class="article" lang="vi">
+      <header class="article-head">
+        <div class="meta-row">
+          <span class="lang">Tiếng Việt</span>
+          <span>Tháng 6, 2026</span>
+          <span data-readtime>·</span>
+        </div>
+        <h1 id="essay-title">Từ Nọc Độc Thằn Lằn Sa Mạc Đến Cuộc Cách Mạng GLP-1 Trong Điều Trị Đái Tháo Đường Và Béo Phì: Vì Sao Khoa Học Cơ Bản Quan Trọng?</h1>
+        <p class="byline">Nguyen Atom Protehome Lab · VinUniversity</p>
+      </header>
+
+      <figure class="article-hero">
+        <img src="assets/writing.webp" alt="Minh hoạ thằn lằn Gila trên cát sa mạc cùng chuỗi xoắn peptide" loading="lazy" width="1376" height="768">
+      </figure>
+
+      <div class="prose" id="prose">
+        <p>Đầu tuần qua, báo The New York Times đăng tải một bài bình luận với tiêu đề đầy cảnh báo:</p>
+        <blockquote class="pull">The Science That Turned Lizard Venom Into GLP-1s Is Under Attack<small>Tạm dịch: Nền khoa học đã biến nọc độc thằn lằn thành thuốc GLP-1 đang bị đe dọa.</small></blockquote>
+        <p>Tiêu đề này không chỉ nói về những loại thuốc giảm cân đang làm thay đổi nền y học hiện đại, mà còn nhắc nhở chúng ta về vai trò sống còn của khoa học cơ bản (basic science) và nghiên cứu dựa trên sự tò mò khoa học (curiosity-driven research).</p>
+        <p>Có lẽ không có câu chuyện nào minh họa rõ hơn giá trị của khoa học cơ bản hơn hành trình ra đời của các thuốc GLP-1, nhóm thuốc đang tạo nên cuộc cách mạng trong điều trị đái tháo đường type 2 và béo phì trên toàn thế giới.</p>
+        <p>Ngày nay, những cái tên như Ozempic, Wegovy hay Mounjaro đã trở nên quen thuộc không chỉ với giới y khoa mà còn với công chúng. Chúng được xem là một trong những đột phá y học quan trọng nhất của thế kỷ XXI. Thành công của các thuốc này đã tạo nên một thị trường trị giá hàng trăm tỷ đô la Mỹ, đưa Novo Nordisk trở thành một trong những tập đoàn dược phẩm giá trị nhất châu Âu, trong khi Eli Lilly vươn lên nhóm các công ty dược phẩm có vốn hóa lớn nhất thế giới.</p>
+        <p>Thế nhưng, nguồn gốc của cuộc cách mạng này lại không bắt đầu từ các chương trình phát triển thuốc giảm cân hay những chiến lược kinh doanh tỷ đô. Nó khởi nguồn từ một câu hỏi khoa học tưởng chừng rất xa rời thực tiễn: điều gì khiến loài thằn lằn Gila (<em>Heloderma suspectum</em>), sinh sống trong các sa mạc khô cằn của Bắc Mỹ, có thể tồn tại trong thời gian dài giữa những bữa ăn?</p>
+        <p>Đầu những năm 1990, bác sĩ nội tiết học John Eng thuộc Trung tâm Y khoa Cựu chiến binh Bronx (New York) đã nghiên cứu các peptide có hoạt tính sinh học trong nước bọt của loài thằn lằn này. Ông phát hiện một peptide mới mang tên exendin-4, có cấu trúc và chức năng tương tự hormone GLP-1 (glucagon-like peptide-1) của con người.</p>
+        <p>Khám phá này ban đầu chỉ là một phát hiện sinh học thú vị. Không ai có thể dự đoán rằng nó sẽ mở đường cho sự phát triển của exenatide — thuốc GLP-1 đầu tiên được phê duyệt điều trị đái tháo đường — và sau đó là cả một thế hệ thuốc mới như semaglutide (Ozempic, Wegovy) hay tirzepatide (Mounjaro).</p>
+        <p>Từ một peptide được tìm thấy trong nước bọt của một loài bò sát sống giữa sa mạc, nhân loại đã phát triển nên những liệu pháp có khả năng kiểm soát đường huyết, giảm cân hiệu quả và làm giảm nguy cơ biến chứng tim mạch cho hàng triệu người trên toàn thế giới.</p>
+        <p>Câu chuyện GLP-1 là minh chứng điển hình cho một chân lý quan trọng của khoa học: những khám phá mang tính cách mạng thường xuất phát từ những câu hỏi không nhằm mục tiêu ứng dụng trước mắt. Khi John Eng nghiên cứu nước bọt của loài thằn lằn Gila, ông không tìm kiếm một loại thuốc giảm cân trị giá hàng trăm tỷ đô la. Ông đơn giản chỉ đang cố gắng hiểu một hiện tượng sinh học của tự nhiên.</p>
+        <p>Chính vì vậy, bài báo của The New York Times mang ý nghĩa vượt xa câu chuyện về GLP-1. Đó là lời nhắc nhở rằng những khoản đầu tư cho khoa học cơ bản ngày hôm nay có thể trở thành những đột phá y học cứu sống hàng triệu người trong tương lai. Nếu chỉ tài trợ cho những nghiên cứu có lợi ích ứng dụng tức thời, chúng ta có thể sẽ bỏ lỡ những phát hiện mang tính chuyển đổi tiếp theo — những phát hiện mà hiện tại chưa ai có thể hình dung được.</p>
+        <p>Từ nọc độc của một loài thằn lằn sa mạc đến cuộc cách mạng điều trị đái tháo đường và béo phì toàn cầu, hành trình của GLP-1 là một minh chứng hùng hồn cho sức mạnh của khoa học khám phá và giá trị lâu dài của nghiên cứu cơ bản.</p>
+
+        <h2>Khi "chén thánh" điều trị tiểu đường gặp trở ngại</h2>
+        <p>Vào những năm 1980, các nhà khoa học phát hiện hormone GLP-1 (Glucagon-like Peptide-1), được tiết ra từ ruột sau bữa ăn.</p>
+        <p>GLP-1 sở hữu nhiều đặc tính lý tưởng:</p>
+        <ul>
+          <li>Kích thích tiết insulin phụ thuộc glucose.</li>
+          <li>Ức chế tiết glucagon.</li>
+          <li>Làm chậm quá trình làm rỗng dạ dày.</li>
+          <li>Tăng cảm giác no.</li>
+        </ul>
+        <p>Tất cả khiến GLP-1 trở thành ứng cử viên hoàn hảo cho điều trị đái tháo đường type 2.</p>
+        <p>Tuy nhiên, một vấn đề lớn nhanh chóng xuất hiện. Trong cơ thể người tồn tại enzyme DPP-4 (Dipeptidyl Peptidase-4), hoạt động như một "chiếc kéo sinh học" cực kỳ hiệu quả. Chỉ trong vòng 1–2 phút sau khi được tiết ra, phần lớn GLP-1 đã bị cắt và mất hoạt tính.</p>
+        <p>Điều đó khiến việc sử dụng trực tiếp GLP-1 trong lâm sàng gần như không khả thi.</p>
+
+        <h2>Món quà bất ngờ từ sa mạc Sonora</h2>
+        <p>Bước ngoặt xảy ra vào năm 1992.</p>
+        <p>Bác sĩ John Eng, khi đó làm việc tại Trung tâm Y tế VA ở New York, không hề tìm kiếm thuốc giảm cân hay thuốc điều trị đái tháo đường. Ông đang nghiên cứu các peptide sinh học mới trong tự nhiên.</p>
+        <p><strong>Khi phân tích nọc độc của loài thằn lằn Gila (<em>Heloderma suspectum</em>), một loài bò sát có nọc độc sống ở vùng sa mạc Tây Nam Hoa Kỳ và Tây Bắc Mexico, ông phát hiện một peptide hoàn toàn mới và đặt tên là Exendin-4.</strong></p>
+        <p>Khám phá này nhanh chóng gây chú ý vì Exendin-4 có cấu trúc rất giống GLP-1 của người và có thể hoạt hóa cùng một thụ thể sinh học.</p>
+        <p>Điều kỳ diệu nằm ở một vài khác biệt nhỏ trong trình tự amino acid.</p>
+        <p>Chính những thay đổi này đã giúp Exendin-4 gần như miễn nhiễm với sự phân hủy của DPP-4.</p>
+        <p>Nói cách khác, thiên nhiên đã vô tình tạo ra một phiên bản "GLP-1 nâng cấp" mà các nhà khoa học đang tìm kiếm.</p>
+
+        <h2>Tiến hóa đã giải quyết bài toán trước con người</h2>
+        <p>Tại sao một loài thằn lằn lại sở hữu phân tử đặc biệt này?</p>
+        <p>Câu trả lời nằm ở tiến hóa.</p>
+        <p>Thằn lằn Gila sống trong môi trường sa mạc khắc nghiệt và chỉ kiếm được thức ăn vài lần mỗi năm. Khi gặp cơ hội, chúng phải ăn một lượng lớn thức ăn và duy trì nguồn năng lượng đó trong thời gian dài.</p>
+        <p>Các nhà khoa học cho rằng Exendin-4 đóng vai trò như một tín hiệu chuyển hóa giúp tối ưu hóa việc sử dụng năng lượng sau bữa ăn lớn, đồng thời điều hòa hoạt động tuyến tụy và hệ tiêu hóa.</p>
+        <p>Hàng triệu năm tiến hóa đã tạo ra một giải pháp sinh học mà y học hiện đại sau đó mới nhận ra giá trị.</p>
+
+        <h2>Từ Exendin-4 đến Ozempic và Mounjaro</h2>
+        <p>Ban đầu, phát hiện của John Eng không nhận được nhiều sự quan tâm từ các công ty dược phẩm lớn.</p>
+        <p><strong>Sau đó, Amylin Pharmaceuticals nhận thấy tiềm năng to lớn của Exendin-4 và phát triển phiên bản tổng hợp mang tên Exenatide (Byetta).</strong></p>
+        <p>Năm 2005, Byetta được FDA phê duyệt, trở thành thuốc đồng vận thụ thể GLP-1 đầu tiên trên thế giới.</p>
+        <p>Thành công của Exenatide đã chứng minh rằng hướng tiếp cận GLP-1 hoàn toàn khả thi và mở ra một cuộc cách mạng trong dược học chuyển hóa.</p>
+        <p>Từ nền tảng đó, các thế hệ thuốc mới liên tục ra đời:</p>
+        <ul>
+          <li>Liraglutide (Victoza, Saxenda)</li>
+          <li>Semaglutide (Ozempic, Wegovy)</li>
+          <li>Tirzepatide (Mounjaro, Zepbound)</li>
+        </ul>
+        <p>Các nhà khoa học tiếp tục cải tiến cấu trúc phân tử bằng cách gắn thêm chuỗi acid béo giúp thuốc liên kết với albumin trong máu, tránh bị đào thải quá nhanh và kéo dài thời gian tác dụng.</p>
+        <p>Kết quả là từ một hormone có tuổi thọ chỉ vài phút, chúng ta đã tạo ra các thuốc chỉ cần tiêm một lần mỗi tuần nhưng vẫn duy trì hiệu quả mạnh mẽ.</p>
+        <p>Ngày nay, GLP-1 không chỉ điều trị đái tháo đường và béo phì mà còn đang được nghiên cứu cho bệnh tim mạch, thận, gan nhiễm mỡ, nghiện chất và nhiều bệnh lý khác.</p>
+
+        <h2>Bài học lớn hơn: Sức mạnh của khoa học cơ bản</h2>
+        <p>Điều đáng chú ý là không ai trong thập niên 1980 có thể dự đoán rằng việc nghiên cứu nọc độc của một loài thằn lằn sẽ tạo ra một thị trường thuốc trị giá hàng trăm tỷ USD.</p>
+        <p>Đây chính là lý do vì sao nhiều nhà khoa học xem GLP-1 là một trong những ví dụ kinh điển nhất về lợi tức đầu tư dài hạn của khoa học cơ bản.</p>
+        <p>Khám phá này không xuất phát từ một chương trình nghiên cứu nhằm phát triển thuốc giảm cân.</p>
+        <p>Nó xuất phát từ những câu hỏi tưởng như rất xa ứng dụng:</p>
+        <ul>
+          <li>Hormone đường ruột hoạt động như thế nào?</li>
+          <li>Động vật có nọc độc sử dụng peptide sinh học ra sao?</li>
+          <li>Tiến hóa đã tạo ra những cơ chế chuyển hóa đặc biệt nào?</li>
+        </ul>
+        <p>Nếu những nghiên cứu như vậy không được tài trợ, Exendin-4 có thể đã không bao giờ được phát hiện.</p>
+
+        <h2>Khi khoa học cơ bản đang bị "tấn công"</h2>
+        <p>Hiện nay, nhiều hệ thống tài trợ nghiên cứu trên thế giới ngày càng ưu tiên các dự án có tác động kinh tế hoặc thương mại ngắn hạn.</p>
+        <p>Các nhà khoa học thường phải trả lời những câu hỏi như:</p>
+        <blockquote class="pull">Nghiên cứu này sẽ tạo ra sản phẩm gì trong 3–5 năm tới?</blockquote>
+        <p>Tuy nhiên, lịch sử khoa học cho thấy những đột phá lớn nhất thường không xuất hiện theo cách đó.</p>
+        <ul>
+          <li>CRISPR bắt nguồn từ nghiên cứu hệ miễn dịch của vi khuẩn.</li>
+          <li>mRNA vaccine được xây dựng trên nhiều thập kỷ nghiên cứu RNA cơ bản.</li>
+          <li>Green Fluorescent Protein (GFP) xuất phát từ việc tìm hiểu tại sao một loài sứa phát sáng màu xanh.</li>
+          <li>Penicillin được phát hiện từ một hiện tượng tưởng như vô tình trong phòng thí nghiệm.</li>
+        </ul>
+        <p>GLP-1 và Exendin-4 cũng đi theo đúng con đường đó.</p>
+        <p>Nghiên cứu ứng dụng thực chất là quá trình khai thác "nguồn vốn tri thức" được tích lũy từ khoa học cơ bản. Nếu ngừng đầu tư vào khoa học nền tảng hôm nay, chúng ta có thể sẽ không còn những đột phá tương tự trong vài thập kỷ tới.</p>
+
+        <h2>Ý nghĩa đối với các đại học nghiên cứu</h2>
+        <p>Đối với những đại học nghiên cứu đang phát triển như VinUniversity, câu chuyện GLP-1 mang đến một thông điệp chiến lược rất rõ ràng.</p>
+        <p>Một hệ sinh thái nghiên cứu mạnh không thể chỉ tập trung vào các dự án tạo ra sản phẩm ngay lập tức. Nó cần duy trì sự cân bằng giữa:</p>
+        <ul>
+          <li>Nghiên cứu ứng dụng ngắn hạn.</li>
+          <li>Nghiên cứu nền tảng dài hạn.</li>
+          <li>Các dự án có rủi ro cao nhưng tiềm năng đột phá lớn.</li>
+        </ul>
+        <p>Những lĩnh vực như lão hóa (aging), proteomics, sinh học hệ thống, virology hay thoái hóa thần kinh ngày nay có thể đang ở chính giai đoạn mà nghiên cứu về nọc độc thằn lằn từng trải qua vào thập niên 1980–1990.</p>
+        <p>Chúng ta chưa nhìn thấy đầy đủ giá trị ứng dụng của chúng hôm nay, nhưng rất có thể các liệu pháp chữa Alzheimer, thuốc kéo dài tuổi thọ hay các công nghệ y học của năm 2050 đang được hình thành từ những nghiên cứu nền tảng ấy.</p>
+
+        <h2>Kết luận</h2>
+        <p>Mỗi lần một bệnh nhân béo phì hoặc đái tháo đường cải thiện sức khỏe nhờ Ozempic, Wegovy hay Mounjaro, chúng ta đang chứng kiến thành quả của hàng chục năm nghiên cứu cơ bản, bắt đầu từ những câu hỏi khoa học tưởng như không liên quan đến y học.</p>
+        <p>Câu chuyện về thằn lằn Gila nhắc nhở chúng ta rằng thiên nhiên vẫn là phòng thí nghiệm hóa học vĩ đại nhất hành tinh, và khoa học cơ bản chính là chiếc chìa khóa để giải mã kho tàng đó.</p>
+        <p>Đầu tư cho khoa học cơ bản không phải là một sự xa xỉ của giới học thuật.</p>
+        <p><strong>Đó là chiến lược đầu tư dài hạn thông minh nhất để tạo ra những đột phá có khả năng thay đổi sức khỏe, kinh tế và tương lai của nhân loại.</strong></p>
+
+        <aside class="callout">
+          <span class="k">Một chi tiết thú vị</span>
+          <p>John Eng, người phát hiện ra Exendin-4 trong nọc độc thằn lằn Gila năm 1992 và công bố trên tạp chí <em>Journal of Biological Chemistry</em> (JBC: một trong những tạp chí lâu đời và có ảnh hưởng nhất trong lĩnh vực sinh hóa và sinh học phân tử), đã làm việc và được đào tạo trong môi trường nghiên cứu của Rosalyn Yalow, nhà khoa học đoạt Giải Nobel Y học năm 1977 nhờ phát minh kỹ thuật radioimmunoassay (RIA).</p>
+          <p>Các tài liệu lịch sử về Yalow ghi nhận rằng John Eng là một trong những học trò (mentee) của bà. Chính kỹ thuật RIA do Yalow phát triển đã giúp thế hệ các nhà nội tiết học như Eng đo lường và phát hiện các peptide hormone ở nồng độ cực thấp trong cơ thể và trong tự nhiên.</p>
+          <p>Thậm chí, một bài viết về Rosalyn Yalow còn nêu rõ: một trong những học trò của bà, John Eng, sau này đã sử dụng kỹ thuật RIA để phát hiện Exendin-4 trong nọc độc thằn lằn Gila vào năm 1992.</p>
+        </aside>
+      </div>
+
+      <div class="article-end">
+        <span>Nguyen Atom Protehome Lab · VinUniversity</span>
+        <a class="btn btn-ghost" href="#writing" id="reader-back-bottom">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(180deg)"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          Back to lab site
+        </a>
+      </div>
+    </article>
+  </div>
+
+  <script>
+    (function () {
+      var header = document.querySelector('.site-header');
+      var navToggle = document.getElementById('navToggle');
+      var navLinks = document.getElementById('navLinks');
+      var reader = document.getElementById('reader');
+      var progress = document.getElementById('progress');
+      var baseTitle = document.title;
+
+      // Header border on scroll
+      function onScroll() { header.classList.toggle('scrolled', window.scrollY > 8); }
+      window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+      // Mobile menu
+      navToggle.addEventListener('click', function () {
+        var open = navLinks.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', open);
+      });
+      navLinks.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') { navLinks.classList.remove('open'); navToggle.setAttribute('aria-expanded', 'false'); }
+      });
+
+      // Reveal on scroll
+      var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: .08 }) : null;
+      document.querySelectorAll('.reveal').forEach(function (el, i) {
+        if (io) { el.style.transitionDelay = (el.closest('.people-grid, .pillars') ? (i % 3) * 70 : 0) + 'ms'; io.observe(el); }
+        else el.classList.add('in');
+      });
+
+      // Active nav link
+      var sections = ['research', 'publications', 'people', 'writing', 'news', 'contact'].map(function (id) { return document.getElementById(id); });
+      if ('IntersectionObserver' in window) {
+        var navIO = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting) {
+              document.querySelectorAll('.nav-links a').forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id); });
+            }
+          });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        sections.forEach(function (s) { navIO.observe(s); });
+      }
+
+      // Reading time (approx. 200 words/min)
+      var words = document.getElementById('prose').textContent.trim().split(/\s+/).length;
+      var mins = Math.max(1, Math.round(words / 200));
+      document.querySelectorAll('[data-readtime]').forEach(function (el) { el.textContent = mins + ' phút đọc'; });
+
+      // Essay reader routing (#writing/glp-1)
+      function route() {
+        var open = location.hash === '#writing/glp-1';
+        reader.classList.toggle('open', open);
+        reader.setAttribute('aria-hidden', String(!open));
+        document.documentElement.style.overflow = open ? 'hidden' : '';
+        if (open) {
+          reader.scrollTop = 0;
+          document.title = 'Từ Nọc Độc Thằn Lằn Sa Mạc Đến Cuộc Cách Mạng GLP-1 · Nguyen Atom Protehome Lab';
+        } else {
+          document.title = baseTitle;
+        }
+      }
+      window.addEventListener('hashchange', route); route();
+      reader.addEventListener('scroll', function () {
+        var max = reader.scrollHeight - reader.clientHeight;
+        progress.style.width = (max > 0 ? (reader.scrollTop / max) * 100 : 0) + '%';
+      }, { passive: true });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && reader.classList.contains('open')) location.hash = '#writing';
+      });
+
+      // Draft badge
+      document.getElementById('draftClose').addEventListener('click', function () {
+        document.getElementById('draftBadge').remove();
+      });
+    })();
+  </script>
+</body>
+</html>
